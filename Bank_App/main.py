@@ -19,7 +19,7 @@ while retry <= 2:
                                    "Press 4 to Pay Utility bill \n"
                                    "Press 5 to Exit \n: "))
             if user_input == 1:
-                print(f"current balance is: {current_balance}")
+                print(f"Account balance is: {current_balance}")
 
             elif user_input == 2:
                 amount = float(input("Enter amount to withdraw: "))

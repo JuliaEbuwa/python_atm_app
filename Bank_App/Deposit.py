@@ -1,8 +1,8 @@
-def deposit(deposit_amount, amount):
+def deposit(account_balance, amount):
     if amount <= 0:
         print("Invalid amount")
     else:
-        deposit_amount += amount
+        account_balance += amount
         print("Deposit Successful")
-        print(f"Current account balance is: {deposit_amount}")
-    return deposit_amount
+        print(f"Account balance is: {account_balance}")
+    return account_balance

@@ -3,7 +3,7 @@ import dstv_subscription
 import gotv_subscription
 
 
-def bill(current_balance):
+def bill(account_balance):
     while True:
         option = int(input("Select the utility you want to pay for \n"
                         "1. for Recharge card\n"
@@ -15,21 +15,21 @@ def bill(current_balance):
         if option == 1:
             phone_number = input("Enter phone number: ")
             amount = float(input("Enter amount to recharge: "))
-            current_balance = Recharge.recharge(phone_number, amount, current_balance)
+            account_balance = Recharge.recharge(phone_number, amount, account_balance)
         elif option == 2:
             dstv_number = input("Enter dstv number: ")
             amount = float(input("Enter amount to pay: "))
-            current_balance = dstv_subscription.subscription(dstv_number, amount, current_balance)
+            account_balance = dstv_subscription.subscription(dstv_number, amount, account_balance)
         elif option == 3:
             gotv_number = input("Enter gotv number: ")
             amount = float(input("Enter amount to pay: "))
-            current_balance = gotv_subscription.subscription(gotv_number, amount, current_balance)
+            account_balance = gotv_subscription.subscription(gotv_number, amount, account_balance)
         elif option == 4:
             break
         else:
             print("Invalid option, try again")
-            bill(current_balance)
+            bill(account_balance)
         break
-    return current_balance
+    return account_balance
 
 
