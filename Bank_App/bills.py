@@ -11,7 +11,6 @@ def bill(account_balance):
                         "3. for gotv subscription\n"
                         "4. Cancel\n"
                         ": "))
-        # if 3 >= option > 0:
         if option == 1:
             phone_number = input("Enter phone number: ")
             amount = float(input("Enter amount to recharge: "))
