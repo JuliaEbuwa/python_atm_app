@@ -5,12 +5,16 @@ import gotv_subscription
 
 def bill(account_balance):
     while True:
-        option = int(input("Select the utility you want to pay for \n"
-                        "1. for Recharge card\n"
-                        "2. for dstv subscription\n"
-                        "3. for gotv subscription\n"
-                        "4. Cancel\n"
-                        ": "))
+        try:
+            option = int(input("Select the utility you want to pay for \n"
+                            "1. for Recharge card\n"
+                            "2. for dstv subscription\n"
+                            "3. for gotv subscription\n"
+                            "4. Cancel\n"
+                            ": "))
+        except ValueError:
+            print("Value must be an integer")
+            continue
         if option == 1:
             phone_number = input("Enter phone number: ")
             amount = float(input("Enter amount to recharge: "))
