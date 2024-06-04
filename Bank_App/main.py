@@ -1,6 +1,7 @@
 import withdrawal
 import Deposit
 import bills
+import Transfer
 
 current_balance = 5000.00
 retry = 0
@@ -28,7 +29,8 @@ while retry <= 2:
                                     "Press 2 to Withdraw \n"
                                     "Press 3 to Deposit \n"
                                     "Press 4 to Pay Utility bill \n"
-                                    "Press 5 to Exit \n: "))
+                                    "Press 5 to Transfer \n"
+                                    "Press 6 to Exit \n: "))
             except ValueError:
                 print("Error! value must be an integer")
                 continue
@@ -43,6 +45,9 @@ while retry <= 2:
             elif user_input == 4:
                 current_balance = bills.bill(current_balance)
             elif user_input == 5:
+                amount = float(input("Enter amount to transfer: "))
+                current_balance = Transfer.transfer(current_balance, amount)
+            elif user_input == 6:
                 print("Exiting...")
                 break
             else:
